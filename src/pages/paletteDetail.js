@@ -14,11 +14,9 @@ const PaletteDetail = ({ location }) => {
   const [copied, setCopied] = useState(false);
   const [source, setSource] = useState("");
   const { p } = location.state;
-  const { href } = window.location;
   const palette = palettes.filter((palette) => palette.id === p.id);
-  if (!p) {
-    location.push("/explore");
-  }
+
+  
 
   const container = useRef(null);
   useEffect(() => {
@@ -32,7 +30,6 @@ const PaletteDetail = ({ location }) => {
       setSource(img.src);
     });
   };
-
 
   return (
     <Container
@@ -88,7 +85,7 @@ const PaletteDetail = ({ location }) => {
                       setCopied(true);
                       setTimeout(() => {
                         setCopied(false);
-                      }, 1000);
+                      }, 500);
                     }}
                   >
                     <Text color="#fff">
@@ -116,7 +113,7 @@ const PaletteDetail = ({ location }) => {
                       setCopied(true);
                       setTimeout(() => {
                         setCopied(false);
-                      }, 1000);
+                      }, 500);
                     }}
                   >
                     <Text color="#fff">
@@ -144,7 +141,7 @@ const PaletteDetail = ({ location }) => {
                       setCopied(true);
                       setTimeout(() => {
                         setCopied(false);
-                      }, 1000);
+                      }, 500);
                     }}
                   >
                     <Text color="#fff">
@@ -174,7 +171,7 @@ const PaletteDetail = ({ location }) => {
                       setCopied(true);
                       setTimeout(() => {
                         setCopied(false);
-                      }, 1000);
+                      }, 500);
                     }}
                   >
                     <Text color="#fff">
@@ -205,7 +202,7 @@ const PaletteDetail = ({ location }) => {
                 >
                   {palette[0].like}
                 </Button>
-                <a href={source} download="colora">
+                <a href={source} download={`colora, ${palette[0].category}`}>
                   <Button
                     _focus={{}}
                     bg="transparent"

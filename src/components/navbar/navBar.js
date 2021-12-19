@@ -3,7 +3,12 @@ import { Image } from "@chakra-ui/react";
 import logo from "../../svgs/logo.svg";
 import { Text } from "@chakra-ui/layout";
 import { Link, NavLink } from "react-router-dom";
-
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { BiHomeSmile } from "react-icons/bi";
+import { IoIosColorFilter } from "react-icons/io";
+import { IoGridOutline } from "react-icons/io5";
+import { GoThreeBars } from "react-icons/go";
+import { AiOutlineContainer } from "react-icons/ai";
 import { Button } from "@chakra-ui/button";
 
 const NavBar = () => {
@@ -28,7 +33,7 @@ const NavBar = () => {
         </Link>
         {items.map((item) => {
           return (
-            <Text key={item.id} ml="4" color="#323232" fontWeight="bold">
+            <Text display={["none", "block", "block", "block", "block"]} key={item.id} ml="4" color="#323232" fontWeight="bold">
               <NavLink activeStyle={{ color: "#EF72AE" }} exact to={item.to}>
                 {item.name}
               </NavLink>
@@ -39,7 +44,7 @@ const NavBar = () => {
 
       <Flex>
         
-        <Flex>
+        <Flex display={["none", "none", "none", "flex", "flex"]}>
           <Button
             h="32px"
             fontWeight="600"
@@ -68,6 +73,36 @@ const NavBar = () => {
             Log up
           </Button>
         </Flex>
+        <Menu>
+          <MenuButton
+            display={["block", "none", "none", "none", "none"]}
+            bg="transparent"
+            _focus={{}}
+            _hover={{}}
+            _active={{}}
+            as={Button}
+            rightIcon={<GoThreeBars className="hamburger-menu" />}
+          ></MenuButton>
+          <MenuList
+            bg="#fff"
+            backdropBlur="16deg"
+            zIndex="200"
+            display={["block", "none", "none", "none", "none"]}
+          >
+            <NavLink to="/">
+              <MenuItem icon={<BiHomeSmile />}>Home</MenuItem>
+            </NavLink>
+            <NavLink to="/explore">
+              <MenuItem icon={<IoIosColorFilter />}>Explore</MenuItem>
+            </NavLink>
+            <NavLink to="/template">
+              <MenuItem icon={<IoGridOutline />}>Template</MenuItem>
+            </NavLink>
+            <NavLink to="/about">
+              <MenuItem icon={<AiOutlineContainer />}>About</MenuItem>
+            </NavLink>
+          </MenuList>
+        </Menu>
       </Flex>
     </Flex>
   );

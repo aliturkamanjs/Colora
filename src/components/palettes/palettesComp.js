@@ -15,8 +15,6 @@ const PalettesComp = () => {
   const [allPalette, setAllPalette] = useState([]);
   const [search, setSearch] = useState("");
 
-
-
   useEffect(() => {
     setAllPalette(palettes);
   }, []);
@@ -37,19 +35,24 @@ const PalettesComp = () => {
     }
   };
 
-
-
   return (
     <>
-
       <Flex
         w="100%"
         h="60px"
-        justifyContent="space-between"
+        justifyContent={[
+          "center",
+          "center",
+          "space-between",
+          "space-between",
+          "space-between",
+        ]}
         alignItems="center"
         borderBottom="0.1px solid #e7e7e7"
       >
-        <Text>Find the perfect palette by mixing search terms.</Text>
+        <Text display={["none", "none", "block", "block", "block"]}>
+          Find the perfect palette by mixing search terms.
+        </Text>
         <InputGroup mr="3" w="400px">
           <Input
             h="35px"
@@ -69,11 +72,20 @@ const PalettesComp = () => {
       </Flex>
 
       <Flex id="top" mt="40px" w="100%" alignItems="center" flexDir="column">
-        <Heading color="#5C5A5E">Trending color palettes</Heading>
-        <Text color="#797979" mt="3">
+        <Heading
+          color="#5C5A5E"
+          fontSize={["21px", "33px", "33px", "33px", "35px "]}
+        >
+          Trending color palettes
+        </Heading>
+        <Text
+          color="#797979"
+          mt="3"
+          fontSize={["14px", "17px", "18px", "18px", "19px "]}
+        >
           Get inspired by thousands of beautiful color
         </Text>
-        <Text mt="-1" color="#797979">
+        <Text mt="-1" color="#797979" fontSize={["14px", "17px", "18px", "18px", "19px "]}>
           schemes and make something cool!
         </Text>
       </Flex>
@@ -89,21 +101,20 @@ const PalettesComp = () => {
         {allPalette.map((p) => {
           return (
             <Flex
-       
-            key={p.id}
-            mt="9"
-            mr="3"
-            ml="3"
-            w="375px"
-            h="279px"
-            flexDir="column"
-            rounded="13"
-            overflow="hidden"
-            bg="#f8fafd"
+              key={p.id}
+              mt="9"
+              mr="3"
+              ml="3"
+              w="375px"
+              h="279px"
+              flexDir="column"
+              rounded="13"
+              overflow="hidden"
+              bg="#f8fafd"
               border=".7px solid"
               borderColor="gray.200"
             >
-              <Flex w="full" h="235px">
+              <Flex w="full" h="235px" >
                 <Flex
                   className="box"
                   alignItems="flex-end"

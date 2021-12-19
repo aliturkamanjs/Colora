@@ -15,15 +15,32 @@ const Footer = () => {
       position="absolute"
       right="0"
       left="0"
-      // bottom="0"
-      height="300px"
+      height="auto"
       bg="#f8fafd"
+      pt={["13", "13", "13", "1", "1"]}
+      pb={["13", "13", "13", "1", "1"]}
       flexDir="column"
       justifyContent="space-between"
       alignItems="center"
     >
-      <Flex w="60%" minH="190px" mt="8" justifyContent="space-between">
-        <Flex flexDir="column">
+      <Flex
+        w={["90%", "80%", "70%", "70%", "60%"]}
+        minH="190px"
+        mt="8"
+        justifyContent="space-between"
+        flexDir={["column", "column", "column", "row", "row"]}
+      >
+        <Flex
+          flexDir="column"
+          mt={["4px", "4px", "4px", "0px", "0px"]}
+          alignItems={[
+            "center",
+            "center",
+            "flex-start",
+            "flex-start",
+            "flex-start",
+          ]}
+        >
           <Heading size="md" color="#1A202C" fontWeight="500">
             Website
           </Heading>
@@ -43,7 +60,17 @@ const Footer = () => {
             </Text>
           </Link>
         </Flex>
-        <Flex flexDir="column">
+        <Flex
+          flexDir="column"
+          mt={["4px", "4px", "4px", "0px", "0px"]}
+          alignItems={[
+            "center",
+            "center",
+            "flex-start",
+            "flex-start",
+            "flex-start",
+          ]}
+        >
           <Heading size="md" color="#1A202C" fontWeight="500">
             Company
           </Heading>
@@ -62,7 +89,17 @@ const Footer = () => {
             Contact
           </Text>
         </Flex>
-        <Flex flexDir="column">
+        <Flex
+          flexDir="column"
+          mt={["4px", "4px", "4px", "0px", "0px"]}
+          alignItems={[
+            "center",
+            "center",
+            "flex-start",
+            "flex-start",
+            "flex-start",
+          ]}
+        >
           <Heading size="md" color="#1A202C" fontWeight="500">
             Resources
           </Heading>
@@ -81,7 +118,17 @@ const Footer = () => {
             Support
           </Text>
         </Flex>
-        <Flex flexDir="column">
+        <Flex
+          flexDir="column"
+          mt={["4px", "4px", "4px", "0px", "0px"]}
+          alignItems={[
+            "center",
+            "center",
+            "flex-start",
+            "flex-start",
+            "flex-start",
+          ]}
+        >
           <Heading size="md" color="#1A202C" fontWeight="500">
             Product
           </Heading>
@@ -98,8 +145,23 @@ const Footer = () => {
           </Text>
         </Flex>
       </Flex>
-      <Flex w="60%" mb="4" justifyContent="space-between">
-        <Flex alignItems="center">
+      <Flex
+        mt="10"
+        w={["90%", "80%", "70%", "60%", "60%"]}
+        flexDir={["column", "column", "row", "row", "row"]}
+        mb="4"
+        justifyContent="space-between"
+      >
+        <Flex
+          alignItems="center"
+          justifyContent={[
+            "center",
+            "center",
+            "flex-start",
+            "flex-start",
+            "flex-start",
+          ]}
+        >
           <Text display="inline-block">
             © {new Date().getFullYear()} created by
             <Text fontWeight="500" display="inline-block" ml="1">
@@ -114,7 +176,12 @@ const Footer = () => {
           </Text>
           <Image ml="1" w="21px" src={fire} />
         </Flex>
-        <Flex justifyContent="space-between" alignItems="center" w="130px ">
+        <Flex
+          justifyContent="space-between"
+          alignItems="center"
+          mt={["8", "8", "0", "0", "0"]}
+          w={["100%", "100%", "130px", "130px", "130px"]}
+        >
           <a target="_blank" href="https://github.com/aliturkamanjs">
             <FaGithub fontSize="25px" />
           </a>

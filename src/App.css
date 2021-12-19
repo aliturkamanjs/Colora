@@ -18,6 +18,11 @@
   transform: translateY(0px);
 }
 
-.test{
-  color: #e7e7e7;
+.hamburger-menu{
+  font-size: 22px;
+  color: #4A5568;
+}
+
+text{
+  color: #5f5f5fa2;
 }
