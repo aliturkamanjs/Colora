@@ -6,7 +6,7 @@ import bgHome from "../images/home.png";
 const Home = () => {
   return (
     <Container
-      h="100vh"
+    h="100vh"
       maxW="container.3xl"
       backgroundImage={bgHome}
       backgroundRepeat="no-repeat"

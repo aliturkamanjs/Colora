@@ -1,10 +1,7 @@
-import { Container, Flex, Heading } from "@chakra-ui/react";
-import { Button } from "@chakra-ui/button";
+import { Container,  } from "@chakra-ui/react";
 import bgHome from "../images/background.png";
 import Layout from "../layout/layout";
 import PalettesComp from "../components/palettes/palettesComp";
-import { Link } from "react-router-dom";
-
 
 
 const Explore = () => {
@@ -13,6 +10,7 @@ const Explore = () => {
   return (
     <Container
       maxW="container.3xl"
+      h="auto"
       backgroundImage={bgHome}
       backgroundRepeat="no-repeat"
       backgroundPosition="center"

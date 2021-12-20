@@ -162,18 +162,18 @@ const Footer = () => {
             "flex-start",
           ]}
         >
-          <Text display="inline-block">
+          <Flex alignItems="center" >
             © {new Date().getFullYear()} created by
-            <Text fontWeight="500" display="inline-block" ml="1">
-              <Link
+            <Text fontWeight="500"  ml="1">
+              <a
+              target="_blank"
                 _focus={{}}
-                isExternal
                 href="https://github.com/aliturkamanjs"
               >
                 Ali Turkaman
-              </Link>
+              </a>
             </Text>
-          </Text>
+          </Flex>
           <Image ml="1" w="21px" src={fire} />
         </Flex>
         <Flex
@@ -183,19 +183,19 @@ const Footer = () => {
           w={["100%", "100%", "130px", "130px", "130px"]}
         >
           <a target="_blank" href="https://github.com/aliturkamanjs">
-            <FaGithub fontSize="25px" />
+            <FaGithub fontSize="25px" color="#2D3748" />
           </a>
           <a
             target="_blank"
             href="https://www.linkedin.com/in/ali-turkaman-55704a21b/"
           >
-            <ImLinkedin fontSize="23px" />
+            <ImLinkedin fontSize="23px" color="#2D3748" />
           </a>
           <a target="_blank" href="https://www.instagram.com/ali_turkaman_n/">
-            <SiInstagram fontSize="23px" />
+            <SiInstagram fontSize="23px" color="#2D3748" />
           </a>
           <a target="_blank" href="https://twitter.com/aturkaman">
-            <BsTwitter fontSize="25px" />
+            <BsTwitter fontSize="25px" color="#2D3748" />
           </a>
         </Flex>
       </Flex>

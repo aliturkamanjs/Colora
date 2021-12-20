@@ -20,6 +20,7 @@ const TempalteComp = () => {
   return (
     <Container
       maxW="container.3xl"
+      h="auto"
       backgroundImage={bgHome}
       backgroundRepeat="no-repeat"
       backgroundPosition="center"
@@ -27,32 +28,33 @@ const TempalteComp = () => {
     >
       <Layout>
         <Flex alignItems="center" w="100%" flexDir="column">
-          <Heading mt="14" fontSize="38px" color="#5C5A5E">
+          <Heading mt="14"  fontSize={["21px", "33px", "38px", "38px", "38px "]} color="#5C5A5E">
             Template palette
           </Heading>
-          <Text mt="2" fontSize="14px" color="#797979">
+          <Text mt="2" color="#797979" fontSize={["14px", "17px", "18px", "18px", "19px "]}>
             Template palette for your better choice
           </Text>
           <Flex
             w="100%"
             flexWrap="wrap"
             justifyContent="space-evenly"
-            // pl="20"
-            // pr="20"
             mb="20"
           >
             {templateData.map((t) => {
               return (
                 <Flex
+                key={t.id}
                   flexDir="column"
                   w="491px"
-                  h="368px"
+                  h={["340px","368px","368px","368px","368px"]}
                   rounded="10"
                   overflow="hidden"
+                  m={["0","10","10","10","10"]}
                   mt="20"
+
                 >
                   <Image w="full" h="301px" objectFit="cover" src={t.img} />
-                  <Flex w="full" h="100%">
+                  <Flex w="full" h={["20","20","100%","100%","100%"]}>
                     <Flex
                       flex={1}
                       bg={t.one}

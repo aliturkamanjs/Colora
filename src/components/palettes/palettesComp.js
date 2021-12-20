@@ -8,7 +8,6 @@ import { Button } from "@chakra-ui/button";
 import { HiColorSwatch } from "react-icons/hi";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
 import { RiSearch2Line } from "react-icons/ri";
-import { motion } from "framer-motion";
 
 const PalettesComp = () => {
   const [copied, setCopied] = useState(false);

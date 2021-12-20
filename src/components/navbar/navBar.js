@@ -18,7 +18,7 @@ const NavBar = () => {
     { name: "Template", to: "/template", id: 3 },
     { name: "About", to: "/about", id: 4 },
   ];
-  
+
   return (
     <Flex
       w="100%"
@@ -33,7 +33,13 @@ const NavBar = () => {
         </Link>
         {items.map((item) => {
           return (
-            <Text display={["none", "block", "block", "block", "block"]} key={item.id} ml="4" color="#323232" fontWeight="bold">
+            <Text
+              key={item.id}
+              display={["none", "block", "block", "block", "block"]}
+              ml="4"
+              color="#323232"
+              fontWeight="bold"
+            >
               <NavLink activeStyle={{ color: "#EF72AE" }} exact to={item.to}>
                 {item.name}
               </NavLink>
@@ -43,7 +49,6 @@ const NavBar = () => {
       </Flex>
 
       <Flex>
-        
         <Flex display={["none", "none", "none", "flex", "flex"]}>
           <Button
             h="32px"
@@ -89,16 +94,16 @@ const NavBar = () => {
             zIndex="200"
             display={["block", "none", "none", "none", "none"]}
           >
-            <NavLink to="/">
+            <NavLink exact={true} activeClassName="active" to="/">
               <MenuItem icon={<BiHomeSmile />}>Home</MenuItem>
             </NavLink>
-            <NavLink to="/explore">
+            <NavLink activeClassName="active" to="/explore">
               <MenuItem icon={<IoIosColorFilter />}>Explore</MenuItem>
             </NavLink>
-            <NavLink to="/template">
+            <NavLink activeClassName="active" to="/template">
               <MenuItem icon={<IoGridOutline />}>Template</MenuItem>
             </NavLink>
-            <NavLink to="/about">
+            <NavLink activeClassName="active" to="/about">
               <MenuItem icon={<AiOutlineContainer />}>About</MenuItem>
             </NavLink>
           </MenuList>

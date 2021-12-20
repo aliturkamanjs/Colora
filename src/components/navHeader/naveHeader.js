@@ -83,21 +83,20 @@ const NavHeader = () => {
         <Flex display={["none", "flex", "flex", "flex", "flex"]}>
           {nav.map((n) => {
             return (
-              <Link to={n.to} key={n.id}>
-                <Text
-                  cursor="pointer"
-                  color={n.color}
-                  fontWeight={n.weight}
-                  fontSize="20px"
-                  pb="1"
-                  transition=".1s all ease-in-out"
-                  mr={n.name !== "About" ? "8" : "0px"}
-                  borderBottom=".2px solid none"
-                  _hover={{ borderBottom: ".2px solid #EF72AE" }}
-                >
-                  {n.name}
-                </Text>
-              </Link>
+              <Text
+                key={n.id}
+                cursor="pointer"
+                color={n.color}
+                fontWeight={n.weight}
+                fontSize="20px"
+                pb="1"
+                transition=".1s all ease-in-out"
+                mr={n.name !== "About" ? "8" : "0px"}
+                borderBottom=".2px solid none"
+                _hover={{ borderBottom: ".2px solid #EF72AE" }}
+              >
+                <Link to={n.to}>{n.name}</Link>
+              </Text>
             );
           })}
         </Flex>

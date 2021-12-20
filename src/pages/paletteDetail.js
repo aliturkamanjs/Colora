@@ -8,15 +8,11 @@ import domtoimage from "dom-to-image";
 import bgHome from "../images/background.png";
 import Layout from "../layout/layout";
 import CopyToClipboard from "react-copy-to-clipboard";
-import palettes from "../data/palettes";
+import NotFoundPage from "./notFound";
 
 const PaletteDetail = ({ location }) => {
   const [copied, setCopied] = useState(false);
   const [source, setSource] = useState("");
-  const { p } = location.state;
-  const palette = palettes.filter((palette) => palette.id === p.id);
-
-  
 
   const container = useRef(null);
   useEffect(() => {
@@ -31,9 +27,13 @@ const PaletteDetail = ({ location }) => {
     });
   };
 
+  if (!location.state) {
+    return <NotFoundPage />;
+  }
+
   return (
     <Container
-      h="100vh"
+      h="auto"
       maxW="container.3xl"
       backgroundImage={bgHome}
       backgroundRepeat="no-repeat"
@@ -50,12 +50,12 @@ const PaletteDetail = ({ location }) => {
           alignItems="center"
         >
           <Flex
-            key={palette[0].id}
+            key={location.state.p.id}
             mt="9"
             mr="3"
             ml="3"
-            w="600px"
-            h="400px"
+            w={["299px", "299px", "300px", "600px", "600px"]}
+            h={["300px", "300px", "300px", "400px", "400px"]}
             flexDir="column"
             justifyContent="space-between"
             rounded="13"
@@ -69,10 +69,10 @@ const PaletteDetail = ({ location }) => {
                 borderTopStartRadius="13px"
                 borderBottomStartRadius="13px"
                 flex={1}
-                h="340px"
-                bg={palette[0].one}
+                h={["240px", "240px", "240px", "340px", "340px"]}
+                bg={location.state.p.one}
               >
-                <CopyToClipboard text={palette[0].one}>
+                <CopyToClipboard text={location.state.p.one}>
                   <Flex
                     className="code"
                     w="20"
@@ -89,7 +89,7 @@ const PaletteDetail = ({ location }) => {
                     }}
                   >
                     <Text color="#fff">
-                      {copied ? "copied" : palette[0].one}
+                      {copied ? "copied" : location.state.p.one}
                     </Text>
                   </Flex>
                 </CopyToClipboard>
@@ -98,10 +98,10 @@ const PaletteDetail = ({ location }) => {
                 className="box"
                 alignItems="flex-end"
                 flex={1}
-                h="340px"
-                bg={palette[0].two}
+                h={["240px", "240px", "240px", "340px", "340px"]}
+                bg={location.state.p.two}
               >
-                <CopyToClipboard text={palette[0].two}>
+                <CopyToClipboard text={location.state.p.two}>
                   <Flex
                     className="code"
                     w="20"
@@ -117,7 +117,7 @@ const PaletteDetail = ({ location }) => {
                     }}
                   >
                     <Text color="#fff">
-                      {copied ? "copied" : palette[0].two}
+                      {copied ? "copied" : location.state.p.two}
                     </Text>
                   </Flex>
                 </CopyToClipboard>
@@ -126,10 +126,10 @@ const PaletteDetail = ({ location }) => {
                 className="box"
                 alignItems="flex-end"
                 flex={1}
-                h="340px"
-                bg={palette[0].three}
+                h={["240px", "240px", "240px", "340px", "340px"]}
+                bg={location.state.p.three}
               >
-                <CopyToClipboard text={palette[0].three}>
+                <CopyToClipboard text={location.state.p.three}>
                   <Flex
                     className="code"
                     w="20"
@@ -145,7 +145,7 @@ const PaletteDetail = ({ location }) => {
                     }}
                   >
                     <Text color="#fff">
-                      {copied ? "copied" : palette[0].three}
+                      {copied ? "copied" : location.state.p.three}
                     </Text>
                   </Flex>
                 </CopyToClipboard>
@@ -156,10 +156,10 @@ const PaletteDetail = ({ location }) => {
                 borderTopEndRadius="13px"
                 borderBottomEndRadius="13px"
                 flex={1}
-                h="340px"
-                bg={palette[0].four}
+                h={["240px", "240px", "240px", "340px", "340px"]}
+                bg={location.state.p.four}
               >
-                <CopyToClipboard text={palette[0].four}>
+                <CopyToClipboard text={location.state.p.four}>
                   <Flex
                     className="code"
                     w="20"
@@ -175,7 +175,7 @@ const PaletteDetail = ({ location }) => {
                     }}
                   >
                     <Text color="#fff">
-                      {copied ? "copied" : palette[0].four}
+                      {copied ? "copied" : location.state.p.four}
                     </Text>
                   </Flex>
                 </CopyToClipboard>
@@ -200,9 +200,12 @@ const PaletteDetail = ({ location }) => {
                   fontWeight="200"
                   leftIcon={<AiFillLike fontSize="19px" color="#646464" />}
                 >
-                  {palette[0].like}
+                  {location.state.p.like}
                 </Button>
-                <a href={source} download={`colora, ${palette[0].category}`}>
+                <a
+                  href={source}
+                  download={`colora, ${location.state.p.category}`}
+                >
                   <Button
                     _focus={{}}
                     bg="transparent"
@@ -220,35 +223,108 @@ const PaletteDetail = ({ location }) => {
                 </a>
               </Flex>
               <Text color="#646464" mr="3" fontSize="15px">
-                {palette[0].date} days
+                {location.state.p.date} days
               </Text>
             </Flex>
           </Flex>
           <Flex
             pl="40px"
             pr="40px"
-            w="600px"
+            w={["299px", "299px", "300px", "600px", "600px"]}
             mt="110px"
             mb="50px"
             flexDir="column"
           >
             <Flex w="full" mt="70px" justifyContent="space-between">
-              <Box rounded="full" w="45px " h="45px" bg={palette[0].one}></Box>
-              <Box rounded="full" w="45px " h="45px" bg={palette[0].two}></Box>
               <Box
                 rounded="full"
                 w="45px "
                 h="45px"
-                bg={palette[0].three}
+                bg={location.state.p.one}
               ></Box>
-              <Box rounded="full" w="45px " h="45px" bg={palette[0].four}></Box>
+              <Box
+                rounded="full"
+                w="45px "
+                h="45px"
+                bg={location.state.p.two}
+              ></Box>
+              <Box
+                rounded="full"
+                w="45px "
+                h="45px"
+                bg={location.state.p.three}
+              ></Box>
+              <Box
+                rounded="full"
+                w="45px "
+                h="45px"
+                bg={location.state.p.four}
+              ></Box>
             </Flex>
             <Divider mt="6" borderColor="#cacaca" />
-            <Flex mt="5" w="full" justifyContent="space-between">
-              <Text>{palette[0].one}</Text>
-              <Text>{palette[0].two}</Text>
-              <Text>{palette[0].three}</Text>
-              <Text>{palette[0].four}</Text>
+            <Flex
+              mt="5"
+              w="full"
+              justifyContent="space-between"
+              alignItems="center"
+              flexDir={["column", "column", "column", "row", "row"]}
+            >
+              <Text
+                mr={["0px", "0px", "25px", "0px", "0px"]}
+                color={[
+                  location.state.p.one,
+                  location.state.p.one,
+                  location.state.p.one,
+                  "gray.800",
+                  "gray.800",
+                ]}
+                mt="2"
+                fontSize={["14px", "14px", "16px", "18px", "18px"]}
+              >
+                {location.state.p.one}
+              </Text>
+              <Text
+                mr={["0px", "0px", "25px", "0px", "0px"]}
+                color={[
+                  location.state.p.two,
+                  location.state.p.two,
+                  location.state.p.two,
+                  "gray.800",
+                  "gray.800",
+                ]}
+                mt="2"
+                fontSize={["14px", "14px", "16px", "18px", "18px"]}
+              >
+                {location.state.p.two}
+              </Text>
+              <Text
+                mr={["0px", "0px", "25px", "0px", "0px"]}
+                color={[
+                  location.state.p.three,
+                  location.state.p.three,
+                  location.state.p.three,
+                  "gray.800",
+                  "gray.800",
+                ]}
+                mt="2"
+                fontSize={["14px", "14px", "16px", "18px", "18px"]}
+              >
+                {location.state.p.three}
+              </Text>
+              <Text
+                mr={["0px", "0px", "25px", "0px", "0px"]}
+                color={[
+                  location.state.p.four,
+                  location.state.p.four,
+                  location.state.p.four,
+                  "gray.800",
+                  "gray.800",
+                ]}
+                mt="2"
+                fontSize={["14px", "14px", "16px", "18px", "18px"]}
+              >
+                {location.state.p.four}
+              </Text>
             </Flex>
           </Flex>
         </Flex>
