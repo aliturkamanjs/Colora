@@ -66,16 +66,16 @@ const NavHeader = () => {
             display={["block", "none", "none", "none", "none"]}
           >
             <Link to="/">
-              <MenuItem icon={<BiHomeSmile />}>Home</MenuItem>
+              <MenuItem color="gray.900" icon={<BiHomeSmile />}>Home</MenuItem>
             </Link>
             <Link to="/explore">
-              <MenuItem icon={<IoIosColorFilter />}>Explore</MenuItem>
+              <MenuItem color="gray.900" icon={<IoIosColorFilter />}>Explore</MenuItem>
             </Link>
             <Link to="/template">
-              <MenuItem icon={<IoGridOutline />}>Template</MenuItem>
+              <MenuItem color="gray.900" icon={<IoGridOutline />}>Template</MenuItem>
             </Link>
             <Link to="/about">
-              <MenuItem icon={<AiOutlineContainer />}>About</MenuItem>
+              <MenuItem color="gray.900" icon={<AiOutlineContainer />}>About</MenuItem>
             </Link>
           </MenuList>
         </Menu>
