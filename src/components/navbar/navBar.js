@@ -95,16 +95,16 @@ const NavBar = () => {
             display={["block", "none", "none", "none", "none"]}
           >
             <NavLink exact={true} activeClassName="active" to="/">
-              <MenuItem icon={<BiHomeSmile />}>Home</MenuItem>
+              <MenuItem color="gray.900" icon={<BiHomeSmile />}>Home</MenuItem>
             </NavLink>
             <NavLink activeClassName="active" to="/explore">
-              <MenuItem icon={<IoIosColorFilter />}>Explore</MenuItem>
+              <MenuItem color="gray.900" icon={<IoIosColorFilter />}>Explore</MenuItem>
             </NavLink>
             <NavLink activeClassName="active" to="/template">
-              <MenuItem icon={<IoGridOutline />}>Template</MenuItem>
+              <MenuItem color="gray.900" icon={<IoGridOutline />}>Template</MenuItem>
             </NavLink>
             <NavLink activeClassName="active" to="/about">
-              <MenuItem icon={<AiOutlineContainer />}>About</MenuItem>
+              <MenuItem color="gray.900" icon={<AiOutlineContainer />}>About</MenuItem>
             </NavLink>
           </MenuList>
         </Menu>

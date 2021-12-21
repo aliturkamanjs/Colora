@@ -31,7 +31,7 @@ const About = () => {
             <Heading size="lg" color="gray.700">
               hi, my name is ali. I’m a frontend developer and content creator.
             </Heading>
-            <Text fontSize="16px" mt="3" textAlign="justify">
+            <Text fontSize="16px" mt="3" textAlign="justify" color="gray.800">
               Lorem ipsum dolor sit amet consectetur adipiscing elit massa
               consectetur in molestie augue sed sed augue nibh et quis nibh
               faucibus sem non cursus lectus nibh volutpat aliquam sed est nibh
