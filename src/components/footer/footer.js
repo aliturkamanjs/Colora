@@ -162,9 +162,9 @@ const Footer = () => {
             "flex-start",
           ]}
         >
-          <Flex alignItems="center" >
+          <Flex alignItems="center" color="gray.800" >
             © {new Date().getFullYear()} created by
-            <Text fontWeight="500"  ml="1">
+            <Text fontWeight="500" color="gray.800"  ml="1">
               <a
               target="_blank"
                 _focus={{}}
