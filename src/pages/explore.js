@@ -6,7 +6,6 @@ import PalettesComp from "../components/palettes/palettesComp";
 
 const Explore = () => {
 
-
   return (
     <Container
       maxW="container.3xl"

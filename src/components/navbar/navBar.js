@@ -12,6 +12,7 @@ import { AiOutlineContainer } from "react-icons/ai";
 import { Button } from "@chakra-ui/button";
 
 const NavBar = () => {
+
   const items = [
     { name: "Home", to: "/", exact: true, id: 1 },
     { name: "Explore", to: "/explore", id: 2 },
@@ -27,18 +28,19 @@ const NavBar = () => {
       justifyContent="space-between"
       alignItems="center"
     >
+
       <Flex alignItems="center">
         <Link to="/">
-          <Image mr="6" src={logo} alt="logo" width="57px" />
+          <Image mr="6" src={logo} width="57px" alt="logo" />
         </Link>
         {items.map((item) => {
           return (
             <Text
               key={item.id}
               display={["none", "block", "block", "block", "block"]}
+              fontWeight="bold"
               ml="4"
               color="#323232"
-              fontWeight="bold"
             >
               <NavLink activeStyle={{ color: "#EF72AE" }} exact to={item.to}>
                 {item.name}

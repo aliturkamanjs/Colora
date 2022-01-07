@@ -20,6 +20,7 @@ const PalettesComp = () => {
 
   const handleChange = (e) => {
     setSearch(e.target.value);
+
     const search = e.target.value;
     if (search !== "") {
       const searchedPalettes = palettes.filter((p) => {
@@ -72,8 +73,8 @@ const PalettesComp = () => {
 
       <Flex id="top" mt="40px" w="100%" alignItems="center" flexDir="column">
         <Heading
-          color="#5C5A5E"
           fontSize={["21px", "33px", "33px", "33px", "35px "]}
+          color="#5C5A5E"
         >
           Trending color palettes
         </Heading>
@@ -84,7 +85,11 @@ const PalettesComp = () => {
         >
           Get inspired by thousands of beautiful color
         </Text>
-        <Text mt="-1" color="#797979" fontSize={["14px", "17px", "18px", "18px", "19px "]}>
+        <Text
+          mt="-1"
+          color="#797979"
+          fontSize={["14px", "17px", "18px", "18px", "19px "]}
+        >
           schemes and make something cool!
         </Text>
       </Flex>
@@ -113,7 +118,7 @@ const PalettesComp = () => {
               border=".7px solid"
               borderColor="gray.200"
             >
-              <Flex w="full" h="235px" >
+              <Flex w="full" h="235px">
                 <Flex
                   className="box"
                   alignItems="flex-end"
