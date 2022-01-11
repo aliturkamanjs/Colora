@@ -6,11 +6,11 @@ import bgHome from "../images/home.png";
 const Home = () => {
   return (
     <Container
-    h="100vh"
-      maxW="container.3xl"
+      h="100vh"
       backgroundImage={bgHome}
       backgroundRepeat="no-repeat"
       backgroundPosition="center"
+      maxW="container.3xl"
       backgroundSize="cover"
     >
       <NavHeader />

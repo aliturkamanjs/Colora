@@ -147,10 +147,10 @@ const Footer = () => {
       </Flex>
       <Flex
         mt="10"
-        w={["90%", "80%", "70%", "60%", "60%"]}
         flexDir={["column", "column", "row", "row", "row"]}
-        mb="4"
+        w={["90%", "80%", "70%", "60%", "60%"]}
         justifyContent="space-between"
+        mb="4"
       >
         <Flex
           alignItems="center"
@@ -164,7 +164,7 @@ const Footer = () => {
         >
           <Flex alignItems="center" color="gray.800" >
             © {new Date().getFullYear()} created by
-            <Text fontWeight="500" color="gray.800"  ml="1">
+            <Text fontWeight="500" color="gray.800"  ml="1.5">
               <a
               target="_blank"
                 _focus={{}}

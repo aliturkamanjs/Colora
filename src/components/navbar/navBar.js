@@ -4,11 +4,11 @@ import logo from "../../svgs/logo.svg";
 import { Text } from "@chakra-ui/layout";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
-import { BiHomeSmile } from "react-icons/bi";
+import { AiOutlineContainer } from "react-icons/ai";
 import { IoIosColorFilter } from "react-icons/io";
 import { IoGridOutline } from "react-icons/io5";
+import { BiHomeSmile } from "react-icons/bi";
 import { GoThreeBars } from "react-icons/go";
-import { AiOutlineContainer } from "react-icons/ai";
 import { Button } from "@chakra-ui/button";
 
 const NavBar = () => {
@@ -60,8 +60,8 @@ const NavBar = () => {
             fontFamily="Raleway"
             background="none"
             _hover={{ color: "#FF5B79" }}
-            _focus={{}}
             _active={{}}
+            _focus={{}}
           >
             Log in
           </Button>

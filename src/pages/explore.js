@@ -17,7 +17,6 @@ const Explore = () => {
     >
       <Layout>
         <PalettesComp />
-
       </Layout>
     </Container>
   );

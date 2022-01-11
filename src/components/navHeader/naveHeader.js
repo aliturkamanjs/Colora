@@ -82,6 +82,7 @@ const NavHeader = () => {
 
         <Flex display={["none", "flex", "flex", "flex", "flex"]}>
           {nav.map((n) => {
+            
             return (
               <Text
                 key={n.id}

@@ -47,6 +47,7 @@ const templateData = [
     four: "#AC88A4",
     id: 6,
   },
+  
   {
     img: "https://static-cse.canva.com/_next/static/assets/example8.file.dd14f60c4f7fbfc996aaf9d275008d0f.jpg",
     one: "#2E5E4E",

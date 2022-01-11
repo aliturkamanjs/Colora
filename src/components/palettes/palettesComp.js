@@ -10,8 +10,8 @@ import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
 import { RiSearch2Line } from "react-icons/ri";
 
 const PalettesComp = () => {
-  const [copied, setCopied] = useState(false);
   const [allPalette, setAllPalette] = useState([]);
+  const [copied, setCopied] = useState(false);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
@@ -19,6 +19,7 @@ const PalettesComp = () => {
   }, []);
 
   const handleChange = (e) => {
+
     setSearch(e.target.value);
 
     const search = e.target.value;
